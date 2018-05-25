@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoSlidingViewController: UIViewController {
     
-    @IBOutlet weak var photosBrowserCollectionView: UICollectionView!
+    @IBOutlet weak private var photosBrowserCollectionView: UICollectionView!
     
 }
 
