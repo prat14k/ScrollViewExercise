@@ -10,4 +10,8 @@ target 'ScrollViewExercise' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
 
+  pod 'AlamofireImage', '~> 3.3'
+  pod 'SVProgressHUD'
+
+
 end

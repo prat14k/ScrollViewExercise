@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import AlamofireImage
+import SVProgressHUD
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "photoIdentifier"
     
     private let maximumZoomScale: CGFloat = 2.0
-    private var photoName: String?
-    private var image: UIImage!
+    private var photo: PhotoModel!
+    
+    private var isImageLoading = false
     
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var photoImageView: UIImageView!
@@ -29,11 +32,22 @@ extension PhotoCollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        updateMinZoomScaleForSize(bounds.size)
+        !isImageLoading ? updateMinZoomScaleForSize(bounds.size) : ()
     }
     func setup(photo: PhotoModel) {
-        image = UIImage(named: ImageAssets.DefaultPhoto)
-        photoImageView.image = image
+        self.photo = photo
+        if let photoURL = URL(string: photo.urlString) {
+            isImageLoading = true
+            SVProgressHUD.show(withStatus: "Loading")
+            photoImageView.af_setImage(withURL: photoURL, imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: true) { [weak self] (response) in
+                if let ref = self {
+                    ref.isImageLoading = false
+                    ref.updateMinZoomScaleForSize(ref.bounds.size)
+                    ref.updateMinZoomScaleForSize(ref.bounds.size)
+                }
+                SVProgressHUD.dismiss()
+            }
+        }
     }
     
 }
@@ -63,10 +77,10 @@ extension PhotoCollectionViewCell {
 extension PhotoCollectionViewCell: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return photoImageView
+        return !isImageLoading ? photoImageView : nil
     }
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        updateConstraintsForSize(bounds.size)
+        !isImageLoading ? updateConstraintsForSize(bounds.size) : ()
     }
     
 }

@@ -43,7 +43,7 @@ extension PhotosRequester: GraphAPIResponseValidation {
         var photos = [PhotoModel]()
         for case let dict as [String:String] in resultData {
             guard let photoID = dict["id"] , let photoURL = dict["picture"] else { continue }
-            photos.append(PhotoModel(id: photoID, url: photoURL))
+            photos.append(PhotoModel(id: photoID, urlString: photoURL))
         }
         return photos
     }

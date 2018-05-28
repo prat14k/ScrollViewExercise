@@ -41,7 +41,7 @@ extension LargePhotosRequester: GraphAPIResponseValidation {
                 let mainImageInfo = (dict["images"] as? [Any])?.first as? [String:String],
                 let imageURL = mainImageInfo["source"]
                 else { continue }
-            photos.append(PhotoModel(id: photoID, url: imageURL))
+            photos.append(PhotoModel(id: photoID, urlString: imageURL))
         }
         return photos
     }

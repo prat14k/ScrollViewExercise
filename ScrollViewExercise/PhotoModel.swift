@@ -10,11 +10,11 @@ import Foundation
 
 struct PhotoModel {
     let id: String
-    let url: String
+    let urlString: String
     
-    init(id: String, url: String) {
+    init(id: String, urlString: String) {
         self.id = id
-        self.url = url
+        self.urlString = urlString
     }
 
 }
