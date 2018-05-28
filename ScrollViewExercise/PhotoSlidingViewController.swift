@@ -26,7 +26,7 @@ extension PhotoSlidingViewController {
     func fetchUserPhotosList()
     {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] () -> () in
-            PhotosRequester.requestData { (photos, error) in
+            LargePhotosRequester.requestData { (photos, error) in
                 if error != nil {
                     // error processing
                     print(error!)
@@ -43,19 +43,17 @@ extension PhotoSlidingViewController {
 }
 
 
-
-
 extension PhotoSlidingViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return userPhotos.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-        photoCell.setup(imageURL: ImageAssets.DefaultPhoto)
+        photoCell.setup(photo: userPhotos[indexPath.row])
         return photoCell
     }
     

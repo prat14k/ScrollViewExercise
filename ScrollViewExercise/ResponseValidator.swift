@@ -36,7 +36,7 @@ extension GraphAPIResponseValidation {
         return try parse(response: response)
     }
     static func validate(response: ResponseType) throws {
-        guard let response = response as? [String:Any]  else { throw GraphAPIError.request(error: "Unknown Response Format") }
+        guard let response = response as? [String:Any]  else { throw GraphAPIError.request(error: StringLiterals.WrongResponseFormat) }
         if let error = response["error"] as? [String:Any] {
             guard let code = error["code"] as? Int,
                 let message = error["message"] as? String,

@@ -31,8 +31,8 @@ extension PhotoCollectionViewCell {
         super.layoutSubviews()
         updateMinZoomScaleForSize(bounds.size)
     }
-    func setup(imageURL: String) {
-        image = UIImage(named: imageURL)
+    func setup(photo: PhotoModel) {
+        image = UIImage(named: ImageAssets.DefaultPhoto)
         photoImageView.image = image
     }
     
