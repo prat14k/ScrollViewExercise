@@ -49,7 +49,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pW6-6P-UgV">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DGH-Go-xV0">
                                     <size key="itemSize" width="138" height="171"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -67,8 +67,8 @@
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3G-1e-r3B">
                                                     <rect key="frame" x="0.0" y="0.0" width="138" height="171"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="Xhy-VG-SyP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1964" height="1266"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Xhy-VG-SyP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
@@ -105,7 +105,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pW6-6P-UgV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2Mq-IL-zBk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pW6-6P-UgV" secondAttribute="bottom" id="Cik-8y-xZV"/>
@@ -125,6 +125,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="default" width="1964" height="1266"/>
+        <image name="placeholderImage" width="400" height="300"/>
     </resources>
 </document>
