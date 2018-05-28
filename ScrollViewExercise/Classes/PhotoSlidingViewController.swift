@@ -11,22 +11,22 @@ import FBSDKCoreKit
 
 class PhotoSlidingViewController: UIViewController {
     
-    var userPhotos = [PhotoModel]()
+    private var userPhotos = [PhotoModel]()
     @IBOutlet weak private var photosBrowserCollectionView: UICollectionView!
     
 }
 
 extension PhotoSlidingViewController {
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchUserPhotosList()
     }
     
     func fetchUserPhotosList()
     {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] () -> () in
-            LargePhotosRequester.requestData { (photos, error) in
+            PhotosRequester.requestData { (photos, error) in
                 if error != nil {
                     // error processing
                     print(error!)
@@ -75,5 +75,26 @@ extension PhotoSlidingViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
+
+extension PhotoSlidingViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if userPhotos.count > 0 {
+            let currentIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+            if currentIndex == (userPhotos.count - 1) {
+                if scrollView.contentOffset.x.truncatingRemainder(dividingBy: scrollView.bounds.width) > (scrollView.bounds.width / 5.0) {
+                    photosBrowserCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
 
 

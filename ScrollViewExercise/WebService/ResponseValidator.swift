@@ -17,7 +17,6 @@ enum GraphAPIError: Error {
 
 
 protocol ResponseValidation {
-    
     associatedtype ResponseType
     associatedtype ReturnedResponseType
     

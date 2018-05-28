@@ -33,16 +33,17 @@
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="feb-Q5-UZ8" id="l3U-RW-pDR"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="SignInVC2PhotoBrowserVC" id="5VO-xd-5vs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCp-Wr-run" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="367" y="188"/>
         </scene>
-        <!--Photo Sliding View Controller-->
+        <!--Photos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="PhotoSlidingViewController" id="BYZ-38-t0r" customClass="PhotoSlidingViewController" customModule="ScrollViewExercise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoSlidingViewController" title="Photos" id="BYZ-38-t0r" customClass="PhotoSlidingViewController" customModule="ScrollViewExercise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

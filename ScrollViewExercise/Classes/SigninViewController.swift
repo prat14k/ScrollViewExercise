@@ -8,21 +8,18 @@
 
 import UIKit
 import FBSDKLoginKit
+import SVProgressHUD
 
 
 class SigninViewController: UIViewController {
 
-    @IBOutlet weak var fbLoginButton: FBSDKLoginButton! {
+    @IBOutlet weak private var fbLoginButton: FBSDKLoginButton! {
         didSet {
             fbLoginButton.delegate = self
             fbLoginButton.readPermissions = ["email", "public_profile" , "user_photos"]
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-    }
 }
 
 
@@ -30,13 +27,13 @@ extension SigninViewController: FBSDKLoginButtonDelegate {
     
     public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
         if error != nil {
-            print(error)
-            return
+            SVProgressHUD.showError(withStatus: error.localizedDescription)
+        } else {
+            performSegue(withIdentifier: SegueIdentifiers.SignInVC2PhotoBrowserVC, sender: nil)
         }
     }
-    
     public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
-        print("Did Logout of FB")
+        SVProgressHUD.showSuccess(withStatus: "Logged Out")
     }
 
 }

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct ImageAssets {
-    static let DefaultPhoto = "default"
+    static let DefaultPhoto = "placeholderImage"
 }

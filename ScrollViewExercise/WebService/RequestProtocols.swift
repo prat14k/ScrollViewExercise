@@ -12,13 +12,14 @@ import FBSDKCoreKit
 
 protocol URLProtocol {
     static var route: String { get }
-    static var basicFields: String { get }
 }
 
 
-protocol FBGetProtocol: URLProtocol { }
+protocol FBGetProtocol: URLProtocol {
+    static var basicFields: String { get }
+}
 extension FBGetProtocol {
     static func get(fields: String = basicFields) -> FBSDKGraphRequest {
-        return FBSDKGraphRequest(graphPath: route, parameters: [StringLiterals.GraphRequestRequiredField : fields])
+        return FBSDKGraphRequest(graphPath: route, parameters: [StringLiterals.GraphRequestRequiredField: fields])
     }
 }
