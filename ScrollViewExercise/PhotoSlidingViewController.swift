@@ -7,12 +7,42 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class PhotoSlidingViewController: UIViewController {
     
+    var userPhotos = [PhotoModel]()
     @IBOutlet weak private var photosBrowserCollectionView: UICollectionView!
     
 }
+
+extension PhotoSlidingViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fetchUserPhotosList()
+    }
+    
+    func fetchUserPhotosList()
+    {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] () -> () in
+            PhotosRequester.requestData { (photos, error) in
+                if error != nil {
+                    // error processing
+                    print(error!)
+                } else if let photos = photos {
+                    self?.userPhotos = photos
+                    DispatchQueue.main.async {
+                        self?.photosBrowserCollectionView.reloadData()
+                    }
+                }
+            }
+        }        
+    }
+    
+}
+
+
 
 
 extension PhotoSlidingViewController: UICollectionViewDataSource {

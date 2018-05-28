@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB188F5220BBD3C700EEB182 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB188F5120BBD3C700EEB182 /* StringLiterals.swift */; };
+		AB188F5420BBD64900EEB182 /* PhotosRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB188F5320BBD64900EEB182 /* PhotosRequester.swift */; };
+		AB188F5620BBD70500EEB182 /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB188F5520BBD70500EEB182 /* ResponseValidator.swift */; };
+		AB21D5B420B99DC50025173C /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21D5B320B99DC50025173C /* code.swift */; };
 		AB2C445B20B8139600854E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C445A20B8139600854E65 /* AppDelegate.swift */; };
 		AB2C445D20B8139600854E65 /* PhotoSlidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C445C20B8139600854E65 /* PhotoSlidingViewController.swift */; };
 		AB2C446020B8139600854E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2C445E20B8139600854E65 /* Main.storyboard */; };
@@ -14,9 +18,21 @@
 		AB2C446520B8139800854E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2C446320B8139800854E65 /* LaunchScreen.storyboard */; };
 		AB2C446F20B81EBA00854E65 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C446E20B81EBA00854E65 /* PhotoCollectionViewCell.swift */; };
 		AB2C447120B8244200854E65 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C447020B8244200854E65 /* ImageAssets.swift */; };
+		ABAB931820BBD16400763E3C /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAB931720BBD16400763E3C /* Routes.swift */; };
+		ABAB931A20BBD19300763E3C /* RequestProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAB931920BBD19300763E3C /* RequestProtocols.swift */; };
+		ABAC651820BA99DD0046E511 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC651720BA99DD0046E511 /* SigninViewController.swift */; };
+		ABD94E6820BAF31200EB5ED1 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD94E6720BAF31200EB5ED1 /* PhotoModel.swift */; };
+		ABD94E6A20BB24F400EB5ED1 /* Storyboard_IDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD94E6920BB24F400EB5ED1 /* Storyboard_IDs.swift */; };
+		E297F466A5F5790677D5E1F6 /* Pods_ScrollViewExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F3BFB19CAEDF480ABB1FEF /* Pods_ScrollViewExercise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82F3BFB19CAEDF480ABB1FEF /* Pods_ScrollViewExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrollViewExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A611838266AA27C76806DB46 /* Pods-ScrollViewExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewExercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewExercise/Pods-ScrollViewExercise.debug.xcconfig"; sourceTree = "<group>"; };
+		AB188F5120BBD3C700EEB182 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
+		AB188F5320BBD64900EEB182 /* PhotosRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRequester.swift; sourceTree = "<group>"; };
+		AB188F5520BBD70500EEB182 /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
+		AB21D5B320B99DC50025173C /* code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = code.swift; sourceTree = "<group>"; };
 		AB2C445720B8139600854E65 /* ScrollViewExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2C445A20B8139600854E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2C445C20B8139600854E65 /* PhotoSlidingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSlidingViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +42,12 @@
 		AB2C446620B8139800854E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB2C446E20B81EBA00854E65 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB2C447020B8244200854E65 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
+		ABAB931720BBD16400763E3C /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		ABAB931920BBD19300763E3C /* RequestProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocols.swift; sourceTree = "<group>"; };
+		ABAC651720BA99DD0046E511 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		ABD94E6720BAF31200EB5ED1 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		ABD94E6920BB24F400EB5ED1 /* Storyboard_IDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard_IDs.swift; sourceTree = "<group>"; };
+		EC7B1C7924B9A908E561E127 /* Pods-ScrollViewExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewExercise/Pods-ScrollViewExercise.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E297F466A5F5790677D5E1F6 /* Pods_ScrollViewExercise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01FF3D5738EFCB4A68EECBB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A611838266AA27C76806DB46 /* Pods-ScrollViewExercise.debug.xcconfig */,
+				EC7B1C7924B9A908E561E127 /* Pods-ScrollViewExercise.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1FF936D379E38E422E744408 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82F3BFB19CAEDF480ABB1FEF /* Pods_ScrollViewExercise.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB2C444E20B8139600854E65 = {
 			isa = PBXGroup;
 			children = (
 				AB2C445920B8139600854E65 /* ScrollViewExercise */,
 				AB2C445820B8139600854E65 /* Products */,
+				01FF3D5738EFCB4A68EECBB7 /* Pods */,
+				1FF936D379E38E422E744408 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +108,15 @@
 				AB2C446620B8139800854E65 /* Info.plist */,
 				AB2C446E20B81EBA00854E65 /* PhotoCollectionViewCell.swift */,
 				AB2C447020B8244200854E65 /* ImageAssets.swift */,
+				AB21D5B320B99DC50025173C /* code.swift */,
+				ABAC651720BA99DD0046E511 /* SigninViewController.swift */,
+				ABD94E6720BAF31200EB5ED1 /* PhotoModel.swift */,
+				ABD94E6920BB24F400EB5ED1 /* Storyboard_IDs.swift */,
+				ABAB931720BBD16400763E3C /* Routes.swift */,
+				ABAB931920BBD19300763E3C /* RequestProtocols.swift */,
+				AB188F5120BBD3C700EEB182 /* StringLiterals.swift */,
+				AB188F5320BBD64900EEB182 /* PhotosRequester.swift */,
+				AB188F5520BBD70500EEB182 /* ResponseValidator.swift */,
 			);
 			path = ScrollViewExercise;
 			sourceTree = "<group>";
@@ -77,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB2C446920B8139800854E65 /* Build configuration list for PBXNativeTarget "ScrollViewExercise" */;
 			buildPhases = (
+				9E64D901BEB1C74BA16A27D3 /* [CP] Check Pods Manifest.lock */,
 				AB2C445320B8139600854E65 /* Sources */,
 				AB2C445420B8139600854E65 /* Frameworks */,
 				AB2C445520B8139600854E65 /* Resources */,
+				53E6CF0E433A4AF118BBA315 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,15 +189,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		53E6CF0E433A4AF118BBA315 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ScrollViewExercise/Pods-ScrollViewExercise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollViewExercise/Pods-ScrollViewExercise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E64D901BEB1C74BA16A27D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScrollViewExercise-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AB2C445320B8139600854E65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB21D5B420B99DC50025173C /* code.swift in Sources */,
+				AB188F5420BBD64900EEB182 /* PhotosRequester.swift in Sources */,
+				AB188F5620BBD70500EEB182 /* ResponseValidator.swift in Sources */,
+				ABAB931A20BBD19300763E3C /* RequestProtocols.swift in Sources */,
 				AB2C445D20B8139600854E65 /* PhotoSlidingViewController.swift in Sources */,
+				AB188F5220BBD3C700EEB182 /* StringLiterals.swift in Sources */,
+				ABAC651820BA99DD0046E511 /* SigninViewController.swift in Sources */,
 				AB2C447120B8244200854E65 /* ImageAssets.swift in Sources */,
+				ABAB931820BBD16400763E3C /* Routes.swift in Sources */,
+				ABD94E6820BAF31200EB5ED1 /* PhotoModel.swift in Sources */,
 				AB2C445B20B8139600854E65 /* AppDelegate.swift in Sources */,
 				AB2C446F20B81EBA00854E65 /* PhotoCollectionViewCell.swift in Sources */,
+				ABD94E6A20BB24F400EB5ED1 /* Storyboard_IDs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +391,7 @@
 		};
 		AB2C446A20B8139800854E65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A611838266AA27C76806DB46 /* Pods-ScrollViewExercise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +409,7 @@
 		};
 		AB2C446B20B8139800854E65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC7B1C7924B9A908E561E127 /* Pods-ScrollViewExercise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
