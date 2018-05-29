@@ -83,7 +83,9 @@ extension PhotoSlidingViewController: UIScrollViewDelegate {
             let currentIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
             if currentIndex == (userPhotos.count - 1) {
                 if scrollView.contentOffset.x.truncatingRemainder(dividingBy: scrollView.bounds.width) > (scrollView.bounds.width / 5.0) {
-                    photosBrowserCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
+                    photosBrowserCollectionView.isUserInteractionEnabled = false
+                    photosBrowserCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: true)
+                    photosBrowserCollectionView.isUserInteractionEnabled = true
                 }
             }
         }
