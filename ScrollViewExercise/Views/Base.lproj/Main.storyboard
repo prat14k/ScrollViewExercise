@@ -18,9 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feb-Q5-UZ8" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="39.5" y="318.5" width="295" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feb-Q5-UZ8">
+                                <rect key="frame" x="39.5" y="313.5" width="295" height="40"/>
+                                <color key="backgroundColor" red="0.14329350190113876" green="0.34063824887267236" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WzG-k6-Wlk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Login to Facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonClicked" destination="eEa-cK-ojH" eventType="touchUpInside" id="Bkb-Sh-Zrd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,8 +47,7 @@
                         <viewLayoutGuide key="safeArea" id="HZt-T9-uDZ"/>
                     </view>
                     <connections>
-                        <outlet property="fbLoginButton" destination="feb-Q5-UZ8" id="l3U-RW-pDR"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="SignInVC2PhotoBrowserVC" id="5VO-xd-5vs"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="photoBrowserVC" id="5VO-xd-5vs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCp-Wr-run" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,8 +82,8 @@
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3G-1e-r3B">
                                                     <rect key="frame" x="0.0" y="0.0" width="138" height="171"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Xhy-VG-SyP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Xhy-VG-SyP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="512" height="512"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
@@ -126,6 +140,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholderImage" width="400" height="300"/>
+        <image name="defaultImage" width="512" height="512"/>
     </resources>
 </document>

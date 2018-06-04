@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FBSDKCoreKit
 
 class PhotoSlidingViewController: UIViewController {
     
@@ -23,21 +22,29 @@ extension PhotoSlidingViewController {
         fetchUserPhotosList()
     }
     
-    func fetchUserPhotosList()
+    private func fetchUserPhotosList()
     {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] () -> () in
-            PhotosRequester.requestData { (photos, error) in
+            PhotosRequester.requestData { (photosResponse, error) in
                 if error != nil {
                     // error processing
                     print(error!)
-                } else if let photos = photos {
-                    self?.userPhotos = photos
-                    DispatchQueue.main.async {
-                        self?.photosBrowserCollectionView.reloadData()
-                    }
+                }
+                guard let photos = photosResponse, photos.count > 0  else { return }
+                self?.updatePhotos(collection: photos)
+                DispatchQueue.main.async {
+                    self?.photosBrowserCollectionView.reloadData()
+                    self?.photosBrowserCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .left, animated: false)
                 }
             }
         }        
+    }
+    
+    private func updatePhotos(collection: [PhotoModel]){
+        userPhotos.removeAll()
+        userPhotos.append(collection[collection.count - 1])
+        userPhotos.append(contentsOf: collection)
+        userPhotos.append(collection[0])
     }
     
 }
@@ -53,7 +60,7 @@ extension PhotoSlidingViewController: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-        photoCell.setup(photo: userPhotos[indexPath.row])
+        photoCell.setup(photo: userPhotos[indexPath.row % userPhotos.count])
         return photoCell
     }
     
@@ -78,19 +85,16 @@ extension PhotoSlidingViewController: UICollectionViewDelegateFlowLayout {
 
 extension PhotoSlidingViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if userPhotos.count > 0 {
-            let currentIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
-            if currentIndex == (userPhotos.count - 1) {
-                if scrollView.contentOffset.x.truncatingRemainder(dividingBy: scrollView.bounds.width) > (scrollView.bounds.width / 5.0) {
-                    photosBrowserCollectionView.isUserInteractionEnabled = false
-                    photosBrowserCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: true)
-                    photosBrowserCollectionView.isUserInteractionEnabled = true
-                }
-            }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard userPhotos.count > 0  else { return }
+        let contentOffsetWhenFullyScrolledRight = scrollView.bounds.width * CGFloat(self.userPhotos.count - 1)
+        if (scrollView.contentOffset.x == contentOffsetWhenFullyScrolledRight) {
+            photosBrowserCollectionView.scrollToItem(at: IndexPath(item:1, section:0), at: .left, animated: false)
+        } else if (scrollView.contentOffset.x == 0)  {
+            photosBrowserCollectionView.scrollToItem(at: IndexPath(item:(self.userPhotos.count - 2), section:0), at: .left, animated: false)
         }
     }
-    
+
 }
 
 

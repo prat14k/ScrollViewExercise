@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct StringLiterals {
-    static let GraphRequestRequiredField = "fields"
-    static let WrongResponseFormat = "The response format is not the one which is expected"
-    static let RequestedDataNotFound = "The response does not contain the requested data"
+enum StringLiterals {
+    static let graphRequestRequiredField = "fields"
+    static let wrongResponseFormat = "The response format is not the one which is expected"
+    static let requestedDataNotFound = "The response does not contain the requested data"
 }

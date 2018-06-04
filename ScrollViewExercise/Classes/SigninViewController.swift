@@ -7,33 +7,31 @@
 //
 
 import UIKit
-import FBSDKLoginKit
+import FacebookLogin
 import SVProgressHUD
 
 
 class SigninViewController: UIViewController {
 
-    @IBOutlet weak private var fbLoginButton: FBSDKLoginButton! {
-        didSet {
-            fbLoginButton.delegate = self
-            fbLoginButton.readPermissions = ["email", "public_profile" , "user_photos"]
-        }
-    }
-
 }
 
 
-extension SigninViewController: FBSDKLoginButtonDelegate {
+extension SigninViewController {
     
-    public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
-        if error != nil {
-            SVProgressHUD.showError(withStatus: error.localizedDescription)
-        } else {
-            performSegue(withIdentifier: SegueIdentifiers.SignInVC2PhotoBrowserVC, sender: nil)
+    @IBAction func loginButtonClicked() {
+        
+        LoginManager().logIn(readPermissions: [.userPhotos], viewController: self) { [weak self] (loginResult) in
+            switch loginResult {
+            case .failed(let error):
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            case .cancelled:
+                SVProgressHUD.showError(withStatus: "Login cancelled")
+            case .success(_,let declinedPermissions,_):
+                guard declinedPermissions.count == 0  else { return SVProgressHUD.showError(withStatus: "Permission not granted") }
+                self?.performSegue(withIdentifier: SegueIdentifiers.photoBrowserVC, sender: nil)
+            }
         }
-    }
-    public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
-        SVProgressHUD.showSuccess(withStatus: "Logged Out")
-    }
 
+    }
+    
 }

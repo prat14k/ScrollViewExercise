@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AB15E73E20BC3325002B2BA2 /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB15E73D20BC3325002B2BA2 /* SegueIdentifiers.swift */; };
 		AB188F5220BBD3C700EEB182 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB188F5120BBD3C700EEB182 /* StringLiterals.swift */; };
-		AB188F5420BBD64900EEB182 /* ThumbnailPhotosRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB188F5320BBD64900EEB182 /* ThumbnailPhotosRequester.swift */; };
 		AB188F5620BBD70500EEB182 /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB188F5520BBD70500EEB182 /* ResponseValidator.swift */; };
 		AB2C445B20B8139600854E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C445A20B8139600854E65 /* AppDelegate.swift */; };
 		AB2C445D20B8139600854E65 /* PhotoSlidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C445C20B8139600854E65 /* PhotoSlidingViewController.swift */; };
@@ -19,6 +18,7 @@
 		AB2C446F20B81EBA00854E65 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C446E20B81EBA00854E65 /* PhotoCollectionViewCell.swift */; };
 		AB2C447120B8244200854E65 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C447020B8244200854E65 /* ImageAssets.swift */; };
 		AB44834120BBF3DC0070DB72 /* PhotoRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB44834020BBF3DC0070DB72 /* PhotoRequester.swift */; };
+		AB47B81B20C477D200A358F7 /* StoryboardsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47B81A20C477D200A358F7 /* StoryboardsNames.swift */; };
 		ABAB931820BBD16400763E3C /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAB931720BBD16400763E3C /* Routes.swift */; };
 		ABAB931A20BBD19300763E3C /* RequestProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAB931920BBD19300763E3C /* RequestProtocols.swift */; };
 		ABAC651820BA99DD0046E511 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC651720BA99DD0046E511 /* SigninViewController.swift */; };
@@ -32,7 +32,6 @@
 		A611838266AA27C76806DB46 /* Pods-ScrollViewExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewExercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewExercise/Pods-ScrollViewExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		AB15E73D20BC3325002B2BA2 /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
 		AB188F5120BBD3C700EEB182 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
-		AB188F5320BBD64900EEB182 /* ThumbnailPhotosRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailPhotosRequester.swift; sourceTree = "<group>"; };
 		AB188F5520BBD70500EEB182 /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
 		AB2C445720B8139600854E65 /* ScrollViewExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2C445A20B8139600854E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		AB2C446E20B81EBA00854E65 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB2C447020B8244200854E65 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
 		AB44834020BBF3DC0070DB72 /* PhotoRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequester.swift; sourceTree = "<group>"; };
+		AB47B81A20C477D200A358F7 /* StoryboardsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsNames.swift; sourceTree = "<group>"; };
 		ABAB931720BBD16400763E3C /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		ABAB931920BBD19300763E3C /* RequestProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocols.swift; sourceTree = "<group>"; };
 		ABAC651720BA99DD0046E511 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +107,7 @@
 				AB2C447020B8244200854E65 /* ImageAssets.swift */,
 				AB188F5120BBD3C700EEB182 /* StringLiterals.swift */,
 				AB15E73D20BC3325002B2BA2 /* SegueIdentifiers.swift */,
+				AB47B81A20C477D200A358F7 /* StoryboardsNames.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -132,7 +133,6 @@
 		AB15E73C20BC2E6C002B2BA2 /* Data Requesters */ = {
 			isa = PBXGroup;
 			children = (
-				AB188F5320BBD64900EEB182 /* ThumbnailPhotosRequester.swift */,
 				AB44834020BBF3DC0070DB72 /* PhotoRequester.swift */,
 			);
 			path = "Data Requesters";
@@ -253,6 +253,8 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -262,6 +264,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +298,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB188F5420BBD64900EEB182 /* ThumbnailPhotosRequester.swift in Sources */,
 				AB188F5620BBD70500EEB182 /* ResponseValidator.swift in Sources */,
 				ABAB931A20BBD19300763E3C /* RequestProtocols.swift in Sources */,
 				AB2C445D20B8139600854E65 /* PhotoSlidingViewController.swift in Sources */,
@@ -308,6 +311,7 @@
 				AB2C445B20B8139600854E65 /* AppDelegate.swift in Sources */,
 				AB2C446F20B81EBA00854E65 /* PhotoCollectionViewCell.swift in Sources */,
 				ABD94E6A20BB24F400EB5ED1 /* Storyboard_IDs.swift in Sources */,
+				AB47B81B20C477D200A358F7 /* StoryboardsNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

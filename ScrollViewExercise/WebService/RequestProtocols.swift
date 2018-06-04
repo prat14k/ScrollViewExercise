@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import FBSDKCoreKit
+import FacebookCore
 
 
 protocol URLProtocol {
@@ -19,7 +19,7 @@ protocol FBGetProtocol: URLProtocol {
     static var basicFields: String { get }
 }
 extension FBGetProtocol {
-    static func get(fields: String = basicFields) -> FBSDKGraphRequest {
-        return FBSDKGraphRequest(graphPath: route, parameters: [StringLiterals.GraphRequestRequiredField: fields])
+    static func get(fields: String = basicFields) -> GraphRequest {
+        return GraphRequest(graphPath: route, parameters: [StringLiterals.graphRequestRequiredField: fields])
     }
 }

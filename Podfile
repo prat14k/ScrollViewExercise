@@ -6,9 +6,8 @@ target 'ScrollViewExercise' do
   use_frameworks!
 
   # Pods for ScrollViewExercise
-  pod ‘Bolts’
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
 
   pod 'AlamofireImage', '~> 3.3'
   pod 'SVProgressHUD'

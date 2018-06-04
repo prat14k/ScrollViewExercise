@@ -32,7 +32,7 @@ extension PhotoCollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        updateZoomScale(size: bounds.size)
+        setZoomScale(for: bounds.size)
     }
     
 }
@@ -43,13 +43,11 @@ extension PhotoCollectionViewCell {
     func setup(photo: PhotoModel) {
         self.photo = photo
         if let photoURL = URL(string: photo.urlString) {
-            SVProgressHUD.show(withStatus: "Loading")
-            photoImageView.af_setImage(withURL: photoURL, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: true) { [weak self] (response) in
+            photoImageView.af_setImage(withURL: photoURL, imageTransition: .crossDissolve(0.1), runImageTransitionIfCached: false) { [weak self] (response) in
                 if let ref = self {
                     ref.updateConstraints(size: ref.bounds.size)
-                    ref.updateZoomScale(size: ref.bounds.size)
+                    ref.setZoomScale(for: ref.bounds.size)
                 }
-                SVProgressHUD.dismiss()
             }
         }
     }
@@ -59,7 +57,7 @@ extension PhotoCollectionViewCell {
 
 extension PhotoCollectionViewCell {
     
-    private func updateZoomScale(size: CGSize) {
+    private func setZoomScale(for size: CGSize) {
         let widthScale = size.width / photoImageView.bounds.width
         let heightScale = size.height / photoImageView.bounds.height
         minimumScale = min(widthScale, heightScale)

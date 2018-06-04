@@ -8,6 +8,14 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - FacebookCore (0.3.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.27)
+  - FacebookLogin (0.3.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.3)
+    - FBSDKCoreKit (~> 4.27)
+    - FBSDKLoginKit (~> 4.27)
   - FBSDKCoreKit (4.33.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.33.0):
@@ -16,9 +24,8 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.3)
-  - Bolts
-  - FBSDKCoreKit
-  - FBSDKLoginKit
+  - FacebookCore
+  - FacebookLogin
   - SVProgressHUD
 
 SPEC REPOS:
@@ -26,6 +33,8 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Bolts
+    - FacebookCore
+    - FacebookLogin
     - FBSDKCoreKit
     - FBSDKLoginKit
     - SVProgressHUD
@@ -34,10 +43,12 @@ SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
+  FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FBSDKCoreKit: 572b047a7e029bc44542bcf8a59414e7ff2b543e
   FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 7ea724bb7fdabb992bdbfaf3e2f36254832c38a6
+PODFILE CHECKSUM: ab271f73a416539ae22fc7d3ec7c259e014e14eb
 
 COCOAPODS: 1.5.2

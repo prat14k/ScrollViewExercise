@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct SegueIdentifiers {
-    static let SignInVC2PhotoBrowserVC = "SignInVC2PhotoBrowserVC"
+enum SegueIdentifiers {
+    static let photoBrowserVC = "photoBrowserVC"
 }

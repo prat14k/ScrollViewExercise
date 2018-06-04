@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import FBSDKLoginKit
+import FacebookCore
+import FacebookLogin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,19 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        if FBSDKAccessToken.current() != nil {
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        if AccessToken.current != nil {
             if let window = window {
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let photosBrowsingController = storyBoard.instantiateViewController(withIdentifier: StoryboardIDs.PhotoSlidingVC) as! PhotoSlidingViewController
+                let storyBoard = UIStoryboard(name: StoryboardsNames.main, bundle: nil)
+                let photosBrowsingController = storyBoard.instantiateViewController(withIdentifier: StoryboardIDs.photoSlidingVC) as! PhotoSlidingViewController
                     window.rootViewController = photosBrowsingController
             }
         }
         return true
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
-        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-        return handled
+        return SDKApplicationDelegate.shared.application(app, open: url, options: options)
     }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

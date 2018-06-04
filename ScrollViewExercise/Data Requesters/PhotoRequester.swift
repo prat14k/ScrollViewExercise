@@ -7,16 +7,17 @@
 //
 
 import Foundation
-
+import FacebookCore
 
 struct PhotosRequester {
     static func requestData(completionHandler: @escaping ([PhotoModel]? , Error?) -> Void) {
-        GraphPaths.Photos.get(fields: "id,images{source}").start { (connection, result, error) in
-            if error != nil {
-                completionHandler(nil, error!)
-            } else {
+        GraphPaths.Photos.get().start { (response, result) in
+            switch result {
+            case .failed(let error):
+                completionHandler(nil, error)
+            case .success(let response):
                 do {
-                    let photos = try fetchData(from: result)
+                    let photos = try fetchData(from: response.dictionaryValue)
                     completionHandler(photos,nil)
                 } catch {
                     completionHandler(nil,error)
@@ -25,14 +26,15 @@ struct PhotosRequester {
         }
     }
 }
+            
 
-extension PhotosRequester: GraphAPIResponseValidation {
+extension PhotosRequester: GraphAPIResponseRequester {
     typealias ResponseType = Any?
     typealias ReturnedResponseType = [PhotoModel]
     
     static func parse(response: ResponseType) throws -> ReturnedResponseType {
         guard let resultData = (response as! [String:Any])["data"] as? [Any]  else {
-            throw GraphAPIError.request(error: StringLiterals.RequestedDataNotFound)
+            throw GraphAPIError.request(error: StringLiterals.requestedDataNotFound)
         }
         var photos = [PhotoModel]()
         for case let dict as [String:Any] in resultData {

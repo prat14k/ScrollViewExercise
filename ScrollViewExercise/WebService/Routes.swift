@@ -11,7 +11,7 @@ import Foundation
 
 struct GraphPaths {
     public struct Photos: FBGetProtocol {
-        static let basicFields = "id,picture"
+        static let basicFields = "id,images{source}"
         static let route = "me/photos"
     }
 }

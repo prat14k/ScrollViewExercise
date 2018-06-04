@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct StoryboardIDs {
-    static let SigninVC = "SigninViewController"
-    static let PhotoSlidingVC = "PhotoSlidingViewController"
+enum StoryboardIDs {
+    static let signinVC = "SigninViewController"
+    static let photoSlidingVC = "PhotoSlidingViewController"
 }
